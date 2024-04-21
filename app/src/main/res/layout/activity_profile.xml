@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.profile.ProfileActivity">
+    tools:context="com.ifs21020.lostandfound.presentation.profile.ProfileActivity">
     <LinearLayout
         android:id="@+id/llProfile"
         android:layout_width="match_parent"
