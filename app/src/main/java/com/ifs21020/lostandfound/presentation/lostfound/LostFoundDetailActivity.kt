@@ -12,6 +12,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.ifs21020.lostandfound.data.local.entity.DelcomLostFoundEntity
 import com.ifs21020.lostandfound.data.model.DelcomLostFound
 import com.ifs21020.lostandfound.data.remote.MyResult
@@ -20,6 +21,7 @@ import com.ifs21020.lostandfound.helper.Utils.Companion.observeOnce
 import com.ifs21020.lostandfound.presentation.ViewModelFactory
 import com.ifs21049.lostandfound.R
 import com.ifs21049.lostandfound.databinding.ActivityLostFoundDetailBinding
+
 
 class LostFoundDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLostFoundDetailBinding
@@ -103,6 +105,17 @@ class LostFoundDetailActivity : AppCompatActivity() {
                 tvLostFoundDetailDate.text = "Dibuat pada: ${lostfound.createdAt}"
                 tvLostFoundDetailDesc.text = lostfound.description
 //            tvLostFoundDetailStatus.text = lostfound.status
+
+                if(lostfound.cover != null){
+                    Toast.makeText(applicationContext,lostfound.cover,Toast.LENGTH_LONG).show()
+                    ivLostFoundDetailCover.visibility = View.VISIBLE
+                    Glide.with(this@LostFoundDetailActivity)
+                        .load(lostfound.cover)
+                        .placeholder(R.drawable.ic_image_24)
+                        .into(ivLostFoundDetailCover)
+                }else{
+                    ivLostFoundDetailCover.visibility = View.GONE
+                }
 
                 viewModel.getLocalLostFound(lostfound.id).observeOnce {
                     if(it != null){

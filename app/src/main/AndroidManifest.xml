@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"/>
 
     <application
         android:allowBackup="true"
@@ -14,14 +17,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LostAndFound"
         tools:targetApi="31">
-
-        <activity android:name="com.ifs21020.lostandfound.presentation.lostfound.LostFoundManageActivity"
+        <activity
+            android:name="com.ifs21020.lostandfound.presentation.profile.ProfileManageActivity"
             android:exported="false" />
-
+        <activity
+            android:name="com.ifs21020.lostandfound.presentation.lostfound.LostFoundFavoriteActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.ifs21020.lostandfound.presentation.lostfound.LostFoundManageActivity"
+            android:exported="false" />
         <activity
             android:name="com.ifs21020.lostandfound.presentation.lostfound.LostFoundDetailActivity"
             android:exported="false" />
-
         <activity
             android:name="com.ifs21020.lostandfound.presentation.profile.ProfileActivity"
             android:exported="false" />
@@ -30,9 +37,6 @@
             android:exported="false" />
         <activity
             android:name="com.ifs21020.lostandfound.presentation.login.LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.ifs21020.lostandfound.presentation.lostfound.LostFoundFavoriteActivity"
             android:exported="false" />
         <activity
             android:name="com.ifs21020.lostandfound.presentation.main.MainActivity"

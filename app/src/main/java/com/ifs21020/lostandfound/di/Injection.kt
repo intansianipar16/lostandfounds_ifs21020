@@ -38,6 +38,4 @@ object Injection {
     fun provideLocalLostFoundRepository(context: Context): LocalLostFoundRepository {
         return LocalLostFoundRepository.getInstance(context)
     }
-
-
 }

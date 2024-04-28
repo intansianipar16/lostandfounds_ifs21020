@@ -29,11 +29,11 @@ class LoginActivity : AppCompatActivity() {
         setupAction()
     }
 
-    private fun setupView(){
+    private fun setupView() {
         showLoading(false)
     }
 
-    private fun setupAction(){
+    private fun setupAction() {
         binding.apply {
             // Memberikan aksis jika text ke tampilan register dipilih
             tvLoginToRegister.setOnClickListener {
@@ -61,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun observeLogin(email: String, password: String){
+    private fun observeLogin(email: String, password: String) {
         viewModel.login(
             email,
             password
@@ -103,7 +103,7 @@ class LoginActivity : AppCompatActivity() {
         binding.btnLogin.text = if (isLoading) "" else "Login"
     }
 
-    private fun openRegisterActivity(){
+    private fun openRegisterActivity() {
         val intent = Intent(applicationContext, RegisterActivity::class.java)
         intent.flags =
             Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
@@ -112,7 +112,7 @@ class LoginActivity : AppCompatActivity() {
         finish()
     }
 
-    private fun openMainActivity(){
+    private fun openMainActivity() {
         val intent = Intent(applicationContext, MainActivity::class.java)
         intent.flags =
             Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
